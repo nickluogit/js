@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 定义
+    let arr=[1,2,4];
+    // 循环遍历
+    for(let a of arr){
+        console.log(a);
+    };
+
+    for(let b in arr){
+        console.log(b);
+    }
+    // 对象属性方法
+    // 插入,颠倒等
+    arr.reverse();
+    arr.splice(1,1,3);
+    document.write(arr);
+
+    let p={
+        name:'lily',
+        age:22,
+        say:function () {
+            return '我的年龄是'+this.age;
+        }
+    }
+    console.log(p);
+    console.log(p.age);
+    console.log(p.say());
+
+    for(let a in p){
+        console.log(a);
+        console.log(p[a]);
+    }
+
+
+</script>
+</body>
+</html>
