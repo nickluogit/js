@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        #menu{
+            width: 80px;
+            border: 1px solid red;
+            display: none;
+            position: absolute;
+        }
+        li{
+            border-bottom:1px solid red ;
+        }
+        #menu li:last-child{
+            border-bottom:none;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>菜单1</li>
+    <li>菜单1</li>
+    <li>菜单1</li>
+    <li>菜单1</li>
+</ul>
+<script>
+    // 选择对象
+    // 注册事件
+    // 改变属性
+    let d=document.getElementById('menu');
+    document.oncontextmenu=function(e){
+        e= e || window.event;
+        let x=e.clientX;
+          d.style.display='block';
+         d.style.left=e.clientX +'px';
+        d.style.top=e.clientY +'px';
+      return false;
+    };
+
+    let ali=d.getElementsByTagName('li');
+    for (let i=0;i<ali.length;i++){
+        ali[i].onclick=function () {
+            alert(this.innerHTML);
+        }
+    }
+</script>
+</body>
+</html>

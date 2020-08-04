@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .cl{
+        background: black;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        width: 280px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    li{
+        list-style: none;
+        background: antiquewhite;
+        transition: all 0.2s linear;
+    }
+    #main{
+        margin: 0 auto;
+        width: 300px;
+        height: 400px;
+        background: #ccc;
+    }
+    ul li{
+        margin: 0 2px;
+        background: antiquewhite;
+        float: left;
+    }
+    .b{
+        display: block;
+    }
+    .n{
+        display: none;
+    }
+</style>
+<body>
+<div id="main">
+    <ul>
+        <li class="cl">汽车</li>
+        <li>电脑</li>
+        <li>手机</li>
+    </ul>
+    <div id="content">
+        <div class="b">001</div>
+        <div class="n">002</div>
+        <div class="n">003</div>
+    </div>
+</div>
+<script>
+    let ali=document.getElementsByTagName('li');
+    let con=document.getElementById('content');
+    let divs=con.getElementsByTagName('div');
+    console.log(ali);
+    for(let i=0;i<ali.length;i++){
+
+        ali[i].onclick=function () {
+            for(let j=0;j<ali.length;j++){
+                ali[j].className='';
+                divs[j].className='n';
+            }
+             this.className='cl';
+
+            divs[i].className='b';
+        }
+    }
+</script>
+</body>
+</html>
